@@ -28,8 +28,8 @@ function addDiv() {
     $('.element').append(`
     <div class="redDiv redColor">
     <p>CLICK COUNTER: ${clickCounter}</p>
-    <button type="button" class="yellowButton">YELLOW</button>
-    <button type="button" class="deleteDiv">DELETE</button>
+    <button class="yellowButton">YELLOW</button>
+    <button class="deleteDiv">DELETE</button>
     `);
 
     //clearing input
