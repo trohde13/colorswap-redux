@@ -10,7 +10,7 @@ function handleReady() {
     //click listener for Generate Button
     $(document).on('click', '#genButton', addDiv);
 
-    $(document).on('click', '.addYellow', changeColor);
+    $(document).on('click', '.yellowButton', changeColor);
     $(document).on('click', '.deleteDiv', deleteDiv);
 
 }; //end handleReady
@@ -26,11 +26,11 @@ function addDiv() {
 
     //appending div element to DOM
     $('.element').append(`
-    <div class="redDiv">
-    <p id="clickCounter">CLICK COUNTER: ${clickCounter}</p>
-    <button class="addYellow">YELLOW</button>
-    <button class="deleteDiv">DELETE</button>
-    `)
+    <div class="redDiv redColor">
+    <p>CLICK COUNTER: ${clickCounter}</p>
+    <button type="button" class="yellowButton">YELLOW</button>
+    <button type="button" class="deleteDiv">DELETE</button>
+    `);
 
     //clearing input
     $('#clickCounter').val('');
@@ -40,10 +40,15 @@ function addDiv() {
 function changeColor() {
     console.log('Poof ... Yellow!');
 
+    $(this).parent().removeClass('redColor');
+    $(this).parent().addClass('addYellow');
+
 }; //end changeColor
 
 function deleteDiv () {
     console.log('DELETED');
+
+    $(this).parent().empty();
 }
 
 
